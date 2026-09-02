@@ -2,12 +2,7 @@ import streamlit as st
 from PIL import Image
 from datetime import datetime
 import random
-if "remaining_requests" not in st.session_state:
-    st.session_state.remaining_requests = 0
-if "remaining_tokens" not in st.session_state:
-    st.session_state.remaining_tokens = 0
-if "total_tokens" not in st.session_state:
-    st.session_state.total_tokens = 0
+
 from AH import create_messages, get_response
 # --- Page Setup ---
 st.set_page_config(
@@ -71,6 +66,13 @@ st.sidebar.subheader("Usage & Remaining Limits")
 
 
 st.sidebar.metric("Total Tokens Used", f"{st.session_state.total_tokens:,}")
+
+if "remaining_requests" not in st.session_state:
+    st.session_state.remaining_requests = 0
+if "remaining_tokens" not in st.session_state:
+    st.session_state.remaining_tokens = 0
+if "total_tokens" not in st.session_state:
+    st.session_state.total_tokens = 0
 
 
 if st.session_state.remaining_requests is not None:
