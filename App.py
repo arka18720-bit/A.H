@@ -1,10 +1,10 @@
 import streamlit as st
 from PIL import Image
-from datetime import datetime
+import datetime
 import random
 
 from AH import create_messages, get_response
-# --- Page Setup ---
+
 st.set_page_config(
     page_title="A.H",
     page_icon="🌐",
