@@ -169,7 +169,7 @@ def get_response(user_input, messages):
         response1 = client.chat.completions.with_raw_response.create(
                 messages=api_messages,
                 model="openai/gpt-oss-20b",
-                temperature=0.7,
+                temperature=1,
         )
         response = response1.parse()
         chat_completion = response.choices[0].message.content
