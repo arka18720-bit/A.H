@@ -64,9 +64,6 @@ st.divider()
 
 st.sidebar.subheader("Usage & Remaining Limits")
 
-
-st.sidebar.metric("Total Tokens Used", f"{st.session_state.total_tokens:,}")
-
 if "remaining_requests" not in st.session_state:
     st.session_state.remaining_requests = 0
 if "remaining_tokens" not in st.session_state:
@@ -74,6 +71,7 @@ if "remaining_tokens" not in st.session_state:
 if "total_tokens" not in st.session_state:
     st.session_state.total_tokens = 0
 
+st.sidebar.metric("Total Tokens Used", f"{st.session_state.total_tokens:,}")
 
 if st.session_state.remaining_requests is not None:
 
