@@ -1,6 +1,6 @@
 import streamlit as st
 from PIL import Image
-import datetime
+from datetime import datetime
 import random
 
 from AH import create_messages, get_response
@@ -86,6 +86,7 @@ BOT_AVATAR = Image.open("AM.jpg")
 
 
 current_hour = datetime.now().hour
+
 if current_hour < 12:
     greeting = "Good morning, human."
 elif current_hour < 18:
